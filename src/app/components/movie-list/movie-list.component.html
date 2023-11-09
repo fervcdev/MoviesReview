@@ -1,0 +1,25 @@
+<app-nav></app-nav>
+
+<div class="container">
+  <table class="table table-hover table-bordered">
+    <tr
+      *ngFor="let movie of movies"
+      (click)="goMovieDetails(movie)"
+      class="table-row"
+    >
+      <td>
+        <img
+          *ngIf="movie.poster_path"
+          [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+          alt="{{ movie.title }}"
+          width="150"
+          height="150"
+        />
+      </td>
+      <td>
+        <h4>{{ movie.title }}</h4>
+        <p>{{ getYearFromDate(movie.release_date) }}</p>
+      </td>
+    </tr>
+  </table>
+</div>

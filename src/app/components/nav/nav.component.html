@@ -1,0 +1,62 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">
+    <img
+      src="/assets/review.jpg"
+      alt="Imagen"
+      width="110"
+      height="70"
+      class="d-inline-block align-top"
+      (click)="goHome()"
+    />
+  </a>
+
+  <form class="form-inline mx-auto position-relative">
+    <div class="search-container">
+      <input
+        class="form-control"
+        size="100"
+        type="search"
+        name="search"
+        placeholder="Search"
+        [(ngModel)]="searchTerm"
+        (ngModelChange)="searchMovies($event)"
+      />
+      <i
+        class="fa fa-search search-icon"
+        (click)="movies.length > 0 ? viewAll() : null"
+      ></i>
+    </div>
+    <div class="autocomplete custom-autocomplete" *ngIf="showAutocomplete">
+      <ul class="list-group">
+        <ng-container *ngIf="movies.length > 0; else noResults">
+          <li
+            class="list-group-item"
+            *ngFor="let suggestion of movies.slice(0, 5)"
+            (click)="onSuggestionClick(suggestion)"
+          >
+            <img
+              *ngIf="suggestion.poster_path"
+              src="https://image.tmdb.org/t/p/original/{{
+                suggestion.poster_path
+              }}"
+              alt="{{ suggestion.original_title }}"
+              width="70"
+              height="70"
+            />
+            {{ suggestion.title }}
+            <span class="year"
+              >({{ suggestion.release_date | date : "yyyy" }})</span
+            >
+          </li>
+          <li class="list-group-item view all" (click)="viewAll()">
+            <strong>View All</strong>
+          </li>
+        </ng-container>
+
+        <ng-template #noResults>
+          <li class="list-group-item">No results found</li>
+        </ng-template>
+      </ul>
+    </div>
+  </form>
+</nav>

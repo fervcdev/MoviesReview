@@ -1,0 +1,39 @@
+<h2>Now Playing</h2>
+<div class="row">
+  <div class="col text-center d-flex align-items-center justify-content-center">
+    <button
+      (click)="slickModal.slickPrev()"
+      class="custom-prev-button arrow-button"
+    >
+      <i class="fa fa-chevron-left"></i>
+    </button>
+  </div>
+  <div class="col-10">
+    <ngx-slick-carousel
+      class="carousel"
+      #slickModal="slick-carousel"
+      [config]="slideConfig"
+    >
+      <div
+        ngxSlickItem
+        *ngFor="let movie of nowPlayingMovies"
+        class="carousel-movie"
+      >
+        <img
+          [src]="'https://image.tmdb.org/t/p/w500/' + movie.poster_path"
+          alt="{{ movie.title }}"
+          class="img-style"
+          (click)="getDetails(movie)"
+        />
+      </div>
+    </ngx-slick-carousel>
+  </div>
+  <div class="col text-center d-flex align-items-center justify-content-center">
+    <button
+      (click)="slickModal.slickNext()"
+      class="custom-next-button arrow-button"
+    >
+      <i class="fa fa-chevron-right"></i>
+    </button>
+  </div>
+</div>

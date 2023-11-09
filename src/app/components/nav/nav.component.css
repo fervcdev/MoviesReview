@@ -1,0 +1,35 @@
+.year {
+  color: gray;
+  margin-left: 5px;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.custom-autocomplete {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  z-index: 999;
+}
+
+.search-container {
+  position: relative;
+}
+
+.search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  color: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+
+}
+
+input.form-control {
+  padding-right: 30px;
+}
+
+.list-group-item.view.all {
+  cursor: pointer;
+}
