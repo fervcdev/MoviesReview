@@ -1,3 +1,11 @@
+#Navegation
+
+
+
+https://github.com/fervcdev/MoviesReview/assets/40637227/ba180b50-0e05-4f0d-94e1-644b51c52922
+
+
+
 # CinemaApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
