@@ -2,7 +2,10 @@
 
 
 
-https://github.com/fervcdev/MoviesReview/assets/40637227/ba180b50-0e05-4f0d-94e1-644b51c52922
+
+https://github.com/fervcdev/MoviesReview/assets/40637227/b3748963-f77e-4b08-a9fa-7cbf4eb855e7
+
+
 
 
 
